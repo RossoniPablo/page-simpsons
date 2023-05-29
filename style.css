@@ -1,0 +1,158 @@
+body, p, h1, ul, li, blockquote{
+    padding: 0px ;         /* tirando margem laterais e de cada item */
+    margin: 0px;   
+}
+
+h1{
+
+}
+body{
+    font-family: "Vollkorn"; /*fonte do body */
+}
+
+li{
+    list-style: none;    /*tira os estilos do li (as bolinhas na frente)*/
+}
+
+img{
+    max-width: 100%;     /* tamanho das imagens */ 
+    display: block;  /*tira a divisao padrao das img*/
+    border-radius: 8px; /*arredondando as bordas*/
+}
+
+/* EDITANDO GRID GERAL*/
+
+.estrutura{
+    display: grid; /*definindo que é um grid*/
+    grid-template-columns: minmax(160px,1fr) 3fr 360px; /*definindo quantas colunas*/
+    grid-template-areas: 
+          "header header header"
+          "sidenav conteudoprincipal fotosextras"   /* posicionmanto na pagina*/
+          "footer footer footer"
+          ;
+}
+
+
+
+
+.header{
+    grid-area: header;
+    background: #F3F781;
+    padding: 30px;
+}
+
+.logo img{
+    max-width: 200px;
+}
+
+/*SIDENAV*/
+.sidenav{
+    grid-area: sidenav;   /*definindo o lugar delas*/
+    background:#F3F781;
+    padding: 30px;
+}  
+
+.sidenav li a{
+    display: block;
+    min-width:60px ;      /* minimo de largura*/
+    max-width: 100px;       /* maximo de largura*/
+    margin: 0 auto 25px auto; /* topo 0, um lado automatico, pra baixo 30px, outro lado automatico*/
+    background:#F5F6CE;
+    border-radius: 8px; /*Arredondando as borbas*/
+    box-shadow: 5px 5px 15px  0px black;
+
+}
+
+
+.conteudoprincipal{
+    grid-area: conteudoprincipal; /*definindo o lugar delas*/
+    max-width: 900px;
+    margin: 0 auto ;
+    padding: 30px;
+    display: grid; /*chamando o grid*/
+    grid-template-columns: 1fr 1fr;  /*Definindo quantas colunas*/
+    grid-gap: 30px;
+    background: #F5F6CE;
+    
+} 
+.conteudoprincipal img{
+    max-width: 300px;
+}
+
+
+.col-wid{
+    grid-column: 1 / 3; /*pega a coluna de ponta a ponta */
+}
+
+.imagen1{
+    grid-row: 3 / 5;
+    line-height: 1.6S;
+    letter-spacing: -0,005em; /*diminuindo o espaçamento da fraseS*/
+    color: rgba (0,0,0.7);
+}
+
+/*ESTILOS CONTEUDO PRINCIPAL*/
+
+p{
+    font-size: 1.2em;
+
+}
+
+/*TITULO*/
+
+.titulo h1{
+    font-size: 3.75em;
+    line-height: 1;
+}
+
+.titulo span{
+    font-size: 14px;
+    font-style: italic;
+}
+/*CARACTERISTICAS*/
+.caracteristicas h1{
+    color: black;
+}
+
+.destaque{
+    font-size: 14px;  
+}
+
+.citação, .atributo{
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px 0 rgba(44,44,44,0.15);
+    background: #F3F781;
+}
+
+.citação p{
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.atributo li{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    padding: 16px;
+
+}
+/*FOTOSEXTRAS*/
+.fotosextras{
+    grid-area: fotosextras;  /*definindo o lugar delas*/
+    background: #F3F781;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    grid-gap:30px ;
+
+}
+
+.footer{
+    grid-area: footer;   /*definindo o lugar delas*/
+    background: linear-gradient(135deg, #0000ff, #5882FA);   
+}
+
+.footer p{
+    text-align: center; /*centralizando a frase*/
+    padding: 30px;
+}
